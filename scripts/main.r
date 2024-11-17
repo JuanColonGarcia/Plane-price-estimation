@@ -1,16 +1,16 @@
-source("carga_datos.R")
-source("limpieza_datos.R")
-source("visualizacion.R")
-source("analisis.R")
-source("load_libraries.R")
-source("transformacion.R")
-source("preprocessing.R")
-source("model_training.R")
-source("test_model.R")
+source("scripts/carga_datos.R")
+source("scripts/limpieza_datos.R")
+source("scripts/visualizacion.R")
+source("scripts/analisis.R")
+source("scripts/load_libraries.R")
+source("scripts/transformacion.R")
+source("scripts/preprocessing.R")
+source("scripts/model_training.R")
+source("scripts/test_model.R")
 
 # Llamada a la función con las librerías necesarias
 
-FLIGHTS_DATASET_PATH_1 <- file.path("Clean_Dataset.csv")
+FLIGHTS_DATASET_PATH_1 <- file.path("data/Clean_Dataset.csv")
 
 install_and_load(c("randomForest", "dplyr", "rpart", 
 "ggplot2", "tidyr", "arules", "corrplot", "caret"))
@@ -43,7 +43,7 @@ data <- escalar_columnas(data)
 #Analisis
 calcular_correlacion_price(data)
 
-write.csv(data, "flights.csv", row.names = FALSE)
+write.csv(data, "data/flights.csv", row.names = FALSE)
 
 # Asegúrate de que 'df' es tu DataFrame
 
@@ -55,7 +55,7 @@ write.csv(data, "flights.csv", row.names = FALSE)
 ####################################################################
 
 DATASETS_PATH <- "../datasets"
-FLIGHTS_DATASET_PATH_2 <- file.path("flights.csv")
+FLIGHTS_DATASET_PATH_2 <- file.path("data/flights.csv")
 
 
 # 1. Cargar los datos
